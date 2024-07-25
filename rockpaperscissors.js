@@ -4,7 +4,11 @@
 
 function getHumanChoice() {
   const playerChoice = prompt("Pick a move!");
-  return playerChoice;
+  if (playerChoice === "rock" || playerChoice ==="paper" || playerChoice === "scissors") {
+    return playerChoice;
+  } else {
+    alert("try again");
+  }
 }
 console.log(getHumanChoice());
 
