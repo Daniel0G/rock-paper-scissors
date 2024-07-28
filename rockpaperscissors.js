@@ -30,24 +30,37 @@ function playRound(humanChoice, computerChoice){
         console.log("it's a tie!");
   } else if (humanChoice === "rock" && computerChoice === "paper"){
     console.log("You lose! Paper beats Rock");
+    computerScore++;
   } else if (humanChoice === "paper" && computerChoice === "rock"){
     console.log("You win! Paper beats Rock");
+    humanScore++;
   } else if (humanChoice === "scissors" && computerChoice === "paper"){
     console.log("You win! scissors beats paper");
+    humanScore++;
   } else if (humanChoice === "paper" && computerChoice === "scissors"){
     console.log("You lose! scissors beats paper");
-  } else if (humanChoice === "paper" && computerChoice === "rock"){
-    console.log("You win! Paper beats Rock");
+    computerScore++;
   } else if (humanChoice === "rock" && computerChoice === "scissors"){
     console.log("You win! rock beats scissors");
-  } else {
+    humanScore++;
+  } else if (humanChoice === "scissors" && computerChoice === "rock"){
     console.log("You lose! rock beats scissors");
+    computerScore++;
+  } else if (humanChoice === "rock","ROCK","Rock" || humanChoice ==="paper","PAPER","Paper" || humanChoice === "scissors","SCISSORS","Scissors") {
+    return humanChoice;
+  } else {
+    alert("incorrect! Please try again.")
   }
 }
+//putting our choice funtions into constant variables
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
+//outputting the choices to the console for clarity
 console.log(humanSelection);
 console.log(computerSelection);
 
+//Displaying the results to the console
 playRound(humanSelection, computerSelection);
+console.log(humanScore);
+console.log(computerScore);
